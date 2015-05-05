@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ReactBackbone</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%== yield(:css_files) %>
+  <%== yield(:js_files) %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield(:content) %>
+
+</body>
+</html>
