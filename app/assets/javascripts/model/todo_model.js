@@ -4,6 +4,7 @@ define('model/TodoModel', function (require) {
   var Backbone = require('lib/backbone');
   // Our basic **Todo** model has `title`, `order`, and `done` attributes.
   var Todo = Backbone.Model.extend({
+    urlRoot: '/todos',
     // Default attributes for the todo item.
     defaults: function() {
       return {

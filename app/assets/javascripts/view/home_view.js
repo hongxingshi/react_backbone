@@ -23,7 +23,7 @@ define('view/HomeView', function (require) {
     },
     // At initialization we bind to the relevant events on the `this.todos`
     // collection, when items are added or changed. Kick things off by
-    // loading any preexisting todos that might be saved in *localStorage*.
+    // loading any preexisting todos.
     initialize: function() {
       var TodoCollection = require('model/TodoCollection');  
       this.input = this.$("#new-todo");
@@ -67,8 +67,7 @@ define('view/HomeView', function (require) {
     addAll: function() {
       this.todos.each(this.addOne, this);
     },
-    // If you hit return in the main input field, create new **Todo** model,
-    // persisting it to *localStorage*.
+    // If you hit return in the main input field, create new **Todo** model
     createOnEnter: function(e) {
       if (e.keyCode != 13) return;
       if (!this.input.val()) return;

@@ -5,10 +5,9 @@ define('model/TodoCollection', function (require) {
   var Backbone = require('lib/backbone');
   
   var TodoCollection = Backbone.Collection.extend({
+    url: '/todos',
     // Reference to this collection's model.
     model: require('model/TodoModel'),
-    // Save all of the todo items under the `"todos-backbone"` namespace.
-    localStorage: new Backbone.LocalStorage("todos-backbone"),
     // Filter down the list of all todo items that are finished.
     done: function() {
       return this.where({done: true});
