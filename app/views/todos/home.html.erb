@@ -1,14 +1,9 @@
 <%- content_for :css_files do %>
   <%= stylesheet_link_tag  'todos', media: 'all', 'data-turbolinks-track' => true %>
-
 <% end %>
 
 <%- content_for :js_files do %>
-  <%= javascript_include_tag 'http://backbonejs.org/test/vendor/jquery.js' %>
-  <%= javascript_include_tag 'http://backbonejs.org/test/vendor/underscore.js' %>
-  <%= javascript_include_tag 'http://backbonejs.org/backbone.js' %>
-  <%= javascript_include_tag 'http://backbonejs.org/examples/backbone.localStorage.js' %>
-  <%= javascript_include_tag 'todos', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'pages/home', 'data-turbolinks-track' => true %>
 <% end %>
 
 <%- content_for :content do %>

@@ -5,11 +5,9 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: mysql2
-  collation: utf8_general_ci
-  encoding: utf8
-  username: root
-  password: 
+  adapter: postgresql
+  username: shihx
+  password: 123456
 
 development:
   <<: *default

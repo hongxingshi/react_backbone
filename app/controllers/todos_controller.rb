@@ -1,5 +1,7 @@
 class TodosController < ApplicationController
-  layout 'application'
+  def home
+    render :layout => 'application'
+  end
   
   def index
   end
