@@ -81,7 +81,7 @@ body {
   border-bottom: none;
 }
 
-#todo-list li.done label {
+#todo-list .done label {
   color: #777777;
   text-decoration: line-through;
 }
@@ -128,10 +128,6 @@ body {
 
 #todo-list li .view label {
   word-break: break-word;
-}
-
-#todo-list li .edit {
-  display: none;
 }
 
 #todoapp footer {

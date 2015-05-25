@@ -1,10 +1,11 @@
 class TodosController < ApplicationController
   def home
+    @todos = Todo.all
     render :layout => 'application'
   end
   
   def index
-    render :json => Todo.all
+    render :json => Todo.all.order("id")
   end
   
   def show
@@ -30,6 +31,6 @@ class TodosController < ApplicationController
   
   private
   def todo_params
-    params.require(:todo).permit(:title)
+    params.require(:todo).permit(:title, :done)
   end
 end

@@ -1,5 +1,6 @@
 //= require ../app/home_app
 //= require ../lib/backbone
+
 $(function () {
   define('main', function (require) {
     var Backbone = require('lib/backbone');

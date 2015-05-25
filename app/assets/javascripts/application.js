@@ -15,3 +15,5 @@
 //= require underscore
 //= require backbone
 //= require module
+//= require react
+//= require react_ujs

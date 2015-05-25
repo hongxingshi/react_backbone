@@ -1,20 +1,21 @@
 //= require ../lib/jquery
 //= require ../lib/underscore
 //= require ../lib/backbone
+//= require ../lib/react
 //= require ../model/todo_collection
 //= require ../view/todo_view
+//= require ../component/todo_footer_component
 
 define('view/HomeView', function (require) {
   var Backbone = require('lib/backbone');
   var _ = require('lib/underscore');
   var $ = require('lib/jquery');
+  var React = require('lib/react');
   
   var HomeView = Backbone.View.extend({
     // Instead of generating a new element, bind to the existing skeleton of
     // the App already present in the HTML.
     el: "#todoapp",
-    // Our template for the line of statistics at the bottom of the app.
-    statsTemplate: _.template($('#stats-template').html()),
     // Delegated events for creating new items, and clearing completed ones.
     events: {
       "keypress #new-todo":  "createOnEnter",
@@ -48,7 +49,11 @@ define('view/HomeView', function (require) {
       if (this.todos.length) {
         this.main.show();
         this.footer.show();
-        this.footer.html(this.statsTemplate({done: done, remaining: remaining}));
+        React.render(
+          React.createElement(TodoFooterComponent, {completedCount: done, todoCount: remaining}), 
+          $('footer').get(0)
+        );
+
       } else {
         this.main.hide();
         this.footer.hide();

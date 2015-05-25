@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20150504084410) do
 
   create_table "todos", force: :cascade do |t|
     t.string   "title",      limit: 255
+    t.boolean  "done",                   default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
